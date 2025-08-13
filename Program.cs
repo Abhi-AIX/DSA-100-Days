@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
+Console.WriteLine("\n--- Day 1: Profile Manager ---");
+
+//Create a instance of ProfileManager
 ProfileManager profileManager = new ProfileManager();
 
 profileManager.AddProfile("Alice");
@@ -24,4 +27,30 @@ if (bobProfile != null)
 else
 {
     Console.WriteLine("Profile not found.");
-}   
+}
+
+Console.WriteLine("\n--- Day 2: Stock Analyzer ---");
+// Create an instance of StockAnalyzer
+StockAnalyzer stockAnalyzer = new StockAnalyzer();
+
+// Example stock prices
+int[] prices = { 7, 1, 5, 3, 6, 4 };
+
+// Find the maximum profit
+int maxProfit = stockAnalyzer.FindMaxProfit(prices);
+Console.WriteLine($"Maximum Profit: {maxProfit}");
+
+// Example with no profit
+int[] noProfitPrices = { 7, 6, 4, 3, 1 };
+int noProfit = stockAnalyzer.FindMaxProfit(noProfitPrices);
+Console.WriteLine($"Maximum Profit with no profit scenario: {noProfit}");
+
+// Example with single price
+int[] singlePrice = { 5 };
+int singlePriceProfit = stockAnalyzer.FindMaxProfit(singlePrice);
+Console.WriteLine($"Maximum Profit with single price: {singlePriceProfit}");
+
+// Example with empty array
+int[] emptyPrices = {};
+int emptyProfit = stockAnalyzer.FindMaxProfit(emptyPrices);
+Console.WriteLine($"Maximum Profit with empty array: {emptyProfit}");
