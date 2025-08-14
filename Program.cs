@@ -54,3 +54,17 @@ Console.WriteLine($"Maximum Profit with single price: {singlePriceProfit}");
 int[] emptyPrices = {};
 int emptyProfit = stockAnalyzer.FindMaxProfit(emptyPrices);
 Console.WriteLine($"Maximum Profit with empty array: {emptyProfit}");
+
+Console.WriteLine("\n--- Day 3: Resrtrict Duplicate UserNames ---");
+// Create an instance of ProfileManager
+ProfileManager profileManagerWithDupCheck = new ProfileManager();
+
+// Add profiles with unique usernames
+profileManagerWithDupCheck.AddProfile("Charlie");
+profileManagerWithDupCheck.AddProfile("David");
+
+// Attempt to add a profile with a duplicate username
+profileManagerWithDupCheck.AddProfile("Charlie"); // Should print an error message
+
+// Attempt to add a profile with an empty username
+profileManagerWithDupCheck.AddProfile(""); // Should print an error message
