@@ -68,3 +68,21 @@ profileManagerWithDupCheck.AddProfile("Charlie"); // Should print an error messa
 
 // Attempt to add a profile with an empty username
 profileManagerWithDupCheck.AddProfile(""); // Should print an error message
+
+Console.WriteLine("\n--- Day 4: Restrict Using forbidden words in usernames ---");
+
+// Create an instance of ProfileManager
+ProfileManager profileManagerWithForbiddenCheck = new ProfileManager();
+
+// Add profiles with unique usernames
+profileManagerWithForbiddenCheck.AddProfile("Eve");
+profileManagerWithForbiddenCheck.AddProfile("Frank");
+
+// Attempt to add a profile with a forbidden username
+profileManagerWithForbiddenCheck.AddProfile("admin"); // Should print an error message
+
+// Attempt to add a profile with an anagram of a forbidden username
+profileManagerWithForbiddenCheck.AddProfile("dminA"); // Should print an error message
+
+// Attempt to add a profile with an empty username
+profileManagerWithForbiddenCheck.AddProfile(""); // Should print an error message
